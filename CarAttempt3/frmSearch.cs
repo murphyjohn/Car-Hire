@@ -54,7 +54,7 @@ namespace CarAttempt3
             String strValue = txtValue.Text;
             String strSearch = "" + strField + " " + strOperator + " " + "'" + strValue + "'";
 
-            //19. The search should be run only if data exists in all three query criteria controls.
+            //The search should be run only if data exists in all three query criteria controls.
             if (strField.Trim() != "" && strOperator.Trim() !="" && strValue.Trim() != "")
             {
                 try
@@ -65,7 +65,7 @@ namespace CarAttempt3
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandType = CommandType.Text;
                         cmd.Connection = sqlConnect;
-                        cmd.CommandText = "SELECT * FROM tblCar WHERE " + strSearch;
+                        cmd.CommandText = "SELECT * FROM tblCar WHERE " + @strSearch;
 
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         adapter.Fill(dataset);
